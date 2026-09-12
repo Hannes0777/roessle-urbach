@@ -1,0 +1,76 @@
+/* Fraunces – warm, soft-terminal display serif (deliberately not a razor-thin
+   high-contrast Didone, to avoid the "cream+hairline-serif" AI-default look) */
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../assets/fonts/fraunces-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/fonts/fraunces-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/fraunces-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../assets/fonts/fraunces-italic-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/fonts/fraunces-italic-600.woff2') format('woff2');
+}
+
+/* Public Sans – humanist, open apertures, tested for legibility at small
+   sizes; chosen for the older target audience instead of a geometric/thin
+   grotesk */
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/publicsans-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../assets/fonts/publicsans-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/fonts/publicsans-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/publicsans-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Public Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/publicsans-italic-400.woff2') format('woff2');
+}

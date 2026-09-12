@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakt | Gasthaus Rössle Urbach</title>
+<meta name="description" content="Kontaktieren Sie das Gasthaus Rössle in Urbach: Mühlstraße 15, 73660 Urbach, Telefon 07181 72751.">
+<link rel="icon" href="assets/images/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<div class="pitch-banner">🐴 <strong>Pitch-Vorschau</strong> für Gasthaus Rössle Urbach: unverbindlicher Entwurf, noch nicht die offizielle Website</div>
+
+<header class="site-header">
+  <div class="header-utility">
+    <div class="container">
+      <div class="header-utility__info">
+        <a href="tel:+49718172751">📞 07181 72751</a>
+        <span class="status-pill" data-live-status data-status="closed">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span data-status-label>Öffnungsstatus wird geladen …</span>
+        </span>
+      </div>
+      <a class="header-utility__cta" href="zimmer.html#buchen">Zimmer anfragen</a>
+    </div>
+  </div>
+  <div class="header-main">
+    <div class="container">
+      <nav class="header-nav-group header-nav-group--left">
+        <a href="speisen-getraenke.html">Speisen &amp; Getränke</a>
+        <a href="zimmer.html">Zimmer</a>
+      </nav>
+      <a class="brand-crest" href="index.html" aria-label="Gasthaus Rössle Urbach, Startseite">
+        <img src="assets/images/logo.webp" alt="Wappen des Gasthaus Rössle: sich aufbäumendes Pferd, von Weinranken umschlungen" width="190" height="153">
+        <span>Die Geniesserei</span>
+      </a>
+      <nav class="header-nav-group header-nav-group--right">
+        <a href="rundgang.html">Rundgang</a>
+        <a href="kontakt.html" aria-current="page">Kontakt</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-overlay">
+        <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        Menü
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-overlay" id="nav-overlay">
+  <div class="nav-overlay__top">
+    <img src="assets/images/logo.webp" alt="" width="52" height="42" style="height:42px;">
+    <button class="nav-overlay__close">Schließen ✕</button>
+  </div>
+  <nav>
+    <a href="index.html">Start</a>
+    <a href="speisen-getraenke.html">Speisen &amp; Getränke</a>
+    <a href="zimmer.html">Zimmer &amp; Buchung</a>
+    <a href="rundgang.html">Rundgang</a>
+    <a href="umgebung.html">Umgebung</a>
+    <a href="kontakt.html" aria-current="page">Kontakt</a>
+  </nav>
+  <div class="nav-overlay__footer">Mühlstraße 15 · 73660 Urbach<br><a href="tel:+49718172751">07181 72751</a></div>
+</div>
+
+<main id="main">
+
+  <section class="hero" style="padding-bottom:60px;">
+    <div class="container" style="max-width:780px;">
+      <span class="eyebrow hero__eyebrow">Kontakt</span>
+      <h1 style="font-size:clamp(2.4rem,4.6vw,3.4rem);">Wir freuen uns auf Ihre Nachricht.</h1>
+      <p class="hero__lede">Für Tischreservierungen, Zimmeranfragen oder einfach nur eine Frage – schreiben Sie uns oder rufen Sie an.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container contact-layout">
+      <div class="card reveal">
+        <h2 style="margin-bottom:24px;">Nachricht senden</h2>
+        <form id="contact-form" novalidate>
+          <div class="form-grid-2">
+            <div class="form-row">
+              <label for="c-name">Name</label>
+              <input type="text" id="c-name" name="name" required autocomplete="name">
+            </div>
+            <div class="form-row">
+              <label for="c-email">E-Mail</label>
+              <input type="email" id="c-email" name="email" required autocomplete="email">
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="c-phone">Telefon <span class="hint">(optional)</span></label>
+            <input type="tel" id="c-phone" name="telefon" autocomplete="tel">
+          </div>
+          <div class="form-row">
+            <label for="c-subject">Anliegen</label>
+            <select id="c-subject" name="type">
+              <option>Tischreservierung</option>
+              <option>Zimmeranfrage</option>
+              <option>Allgemeine Frage</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="c-message">Nachricht</label>
+            <textarea id="c-message" name="nachricht" rows="5" required></textarea>
+          </div>
+          <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button type="submit" class="btn btn-primary btn-block">Nachricht senden</button>
+          <div class="form-status" hidden></div>
+        </form>
+      </div>
+
+      <div class="reveal">
+        <h2 style="margin-bottom:24px;">So erreichen Sie uns</h2>
+        <table class="hours-table" style="margin-bottom:30px;">
+          <tr><th>Adresse</th><td>Mühlstraße 15, 73660 Urbach</td></tr>
+          <tr><th>Telefon</th><td><a href="tel:+49718172751">07181 72751</a></td></tr>
+        </table>
+        <div class="divider-vine">🍇</div>
+        <h3 style="margin-bottom:14px;">Öffnungszeiten Restaurant</h3>
+        <table class="hours-table" style="margin-bottom:30px;">
+          <tr><th>Do – Sa</th><td>17:30 – 23:00 Uhr</td></tr>
+          <tr><th>So</th><td>11:30 – 14:30 Uhr</td></tr>
+          <tr><th></th><td>17:30 – 21:00 Uhr</td></tr>
+        </table>
+        <div class="card" style="padding:24px;">
+          <iframe class="map-frame" style="height:260px;" src="https://www.google.com/maps?q=M%C3%BChlstra%C3%9Fe+15,+73660+Urbach&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Karte: Gasthaus Rössle, Mühlstraße 15, Urbach"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="assets/images/logo.webp" alt="" width="40" height="32">Gasthaus Rössle</div>
+        <p>Weinstube, Restaurant und Gästezimmer im Remstal – in Urbach.</p>
+      </div>
+      <div class="footer-col"><h5>Adresse</h5><ul><li>Mühlstraße 15</li><li>73660 Urbach</li><li><a href="tel:+49718172751">07181 72751</a></li></ul></div>
+      <div class="footer-col"><h5>Öffnungszeiten</h5><ul><li>Do–Sa 17:30–23:00</li><li>So 11:30–14:30 &amp; 17:30–21:00</li><li>Hotel täglich</li></ul></div>
+      <div class="footer-col"><h5>Seite</h5><ul><li><a href="speisen-getraenke.html">Speisen &amp; Getränke</a></li><li><a href="zimmer.html">Zimmer</a></li><li><a href="rundgang.html">Rundgang</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Gasthaus Rössle Urbach</div>
+      <div class="links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="https://www.webdesign-ehmann.de" target="_blank" rel="noopener" class="footer-credit">Erstellt von Webdesign Ehmann</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/contact-form.js"></script>
+</body>
+</html>
