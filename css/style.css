@@ -290,7 +290,7 @@ body.has-hero-overlay .nav-toggle__bars span { background: var(--gold-100); }
 /* Inhalt fährt beim Laden sanft nacheinander hoch — reine CSS-Keyframes,
    kein JS/Scroll-Trigger nötig, daher immer sichtbar falls JS mal nicht lädt. */
 @media (prefers-reduced-motion: no-preference) {
-  .hero > .container > * { animation: heroFadeUp 0.7s cubic-bezier(.22,.61,.36,1) both; }
+  .hero > .hero__content > * { animation: heroFadeUp 0.7s cubic-bezier(.22,.61,.36,1) both; }
   .hero__badges { animation-delay: 0.05s; }
   .hero__eyebrow { animation-delay: 0.14s; }
   .hero h1 { animation-delay: 0.22s; }
@@ -346,6 +346,22 @@ body.has-hero-overlay .nav-toggle__bars span { background: var(--gold-100); }
 
 @media (max-width: 640px) {
   .hero--photo { min-height: auto; padding: 140px 0 72px; }
+}
+
+/* ---- Homepage-only: fold the "three ways" discovery cards into the same
+   photo hero instead of a separate solid-bordeaux section below — the two
+   used to meet at a hard seam (photo hero -> flat color block); now it's
+   one continuous section with the hero's own photo/tint carrying through
+   behind the cards too. */
+.hero--home {
+  display: flex; flex-direction: column; align-items: stretch;
+  min-height: auto; gap: 90px; padding-bottom: 100px;
+}
+.hero__discover { position: relative; z-index: 2; }
+.hero__discover h2 { color: var(--white); }
+.hero__discover .section-head p { color: var(--gold-100); }
+@media (max-width: 640px) {
+  .hero--home { gap: 64px; padding-bottom: 72px; }
 }
 
 /* ---- Compact photo hero (subpages) --------------------------------------
