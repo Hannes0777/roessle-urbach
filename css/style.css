@@ -348,6 +348,16 @@ body.has-hero-overlay .nav-toggle__bars span { background: var(--gold-100); }
   .hero--photo { min-height: auto; padding: 140px 0 72px; }
 }
 
+/* ---- Compact photo hero (subpages) --------------------------------------
+   Same full-bleed facade photo + glass header as the homepage, but shorter
+   since subpages lead into real content rather than carrying the full
+   first-impression weight. */
+.hero--compact { min-height: auto; padding: 168px 0 76px; }
+.hero--compact .hero__content { max-width: 720px; }
+@media (max-width: 640px) {
+  .hero--compact { padding: 132px 0 56px; }
+}
+
 /* ==========================================================================
    CARDS / SECTIONS
    ========================================================================== */
