@@ -166,6 +166,13 @@ em { font-style: italic; }
 .brand-crest { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; }
 .brand-crest img { height: 78px; width: auto; }
 .brand-crest span { font-family: var(--font-body); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); }
+@media (prefers-reduced-motion: no-preference) {
+  .brand-crest img { animation: crestFloat 5s ease-in-out infinite; }
+}
+@keyframes crestFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
 
 .nav-toggle {
   display: none; align-items: center; gap: 10px;
@@ -218,20 +225,52 @@ em { font-style: italic; }
    ========================================================================== */
 .hero {
   position: relative; overflow: hidden;
-  background: radial-gradient(ellipse at 20% -10%, var(--gold-100) 0%, var(--vellum) 42%, var(--vellum-dark) 100%);
+  background: var(--vellum);
   padding: 84px 0 100px;
 }
+/* Weich geblurrtes Fassadenfoto als Hero-Hintergrund, mit sehr langsamem
+   Ken-Burns-Zoom — Blur macht es zur reinen Farb-/Stimmungsfläche statt
+   eines ablenkenden Fotos, dadurch bleibt der Text davor gut lesbar. */
+.hero::after {
+  content: ''; position: absolute; inset: -24px; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(160deg, rgba(243,234,217,0.90) 0%, rgba(243,234,217,0.74) 45%, rgba(234,223,201,0.88) 100%),
+    url('../assets/images/hero-bg-blur.webp');
+  background-size: cover; background-position: center;
+  animation: heroKenBurns 26s ease-in-out infinite alternate;
+}
 .hero::before {
-  content: ''; position: absolute; inset: 0; opacity: 0.5; pointer-events: none;
+  content: ''; position: absolute; inset: 0; z-index: 1; opacity: 0.5; pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%233a0e15' stroke-opacity='0.05' stroke-width='1.4'%3E%3Cpath d='M10 100c8-30 6-50-6-70M60 110c10-34 8-58-8-84M110 100c-8-30-6-50 6-70'/%3E%3Ccircle cx='4' cy='30' r='3'/%3E%3Ccircle cx='54' cy='26' r='3'/%3E%3Ccircle cx='104' cy='30' r='3'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 300px;
 }
-.hero__grid { position: relative; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center; }
+@keyframes heroKenBurns {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.09) translate(-1.2%, -1%); }
+}
+.hero__grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center; }
 .hero__eyebrow { color: var(--gold-700); }
 .hero h1 { margin-bottom: 22px; }
 .hero h1 em { color: var(--bordeaux-700); font-style: italic; }
 .hero__lede { font-size: 1.22rem; color: var(--ink-soft); margin-bottom: 34px; }
 .hero__actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 38px; }
+
+/* Inhalt fährt beim Laden sanft nacheinander hoch — reine CSS-Keyframes,
+   kein JS/Scroll-Trigger nötig, daher immer sichtbar falls JS mal nicht lädt. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero > .container > *, .hero__grid > * { animation: heroFadeUp 0.7s cubic-bezier(.22,.61,.36,1) both; }
+  .hero > .container > .hero__grid { animation: none; } /* nur die Kinder animieren, nicht auch den Grid-Container selbst */
+  .hero__eyebrow { animation-delay: 0.05s; }
+  .hero h1 { animation-delay: 0.15s; }
+  .hero__lede { animation-delay: 0.28s; }
+  .hero__actions { animation-delay: 0.4s; }
+  .hero-hours { animation-delay: 0.52s; }
+  .hero__grid > div:last-child { animation-delay: 0.3s; }
+}
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 .hero-hours {
   display: inline-flex; align-items: center; gap: 14px;
@@ -275,7 +314,11 @@ section { padding: 96px 0; }
 .card {
   background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-md);
   padding: 32px; box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.card img { transition: transform 0.5s ease; }
+.card:hover img { transform: scale(1.045); }
 
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
@@ -286,6 +329,13 @@ section { padding: 96px 0; }
   margin: 8px 0 30px; font-size: 1.3rem;
 }
 .divider-vine::before, .divider-vine::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+@media (prefers-reduced-motion: no-preference) {
+  .divider-vine span { display: inline-block; animation: gentleSway 4s ease-in-out infinite; }
+}
+@keyframes gentleSway {
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg); }
+}
 
 /* ---- Placeholder-Karten (fehlender echter Content, nicht erfunden) ------ */
 .placeholder-note {
@@ -346,11 +396,14 @@ section { padding: 96px 0; }
 .booking-steps__step {
   flex: 1; min-width: 150px; padding: 18px 20px; display: flex; align-items: center; gap: 12px;
   font-weight: 700; color: var(--ink-faint); border-bottom: 3px solid transparent; white-space: nowrap;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 .booking-steps__step .num {
   width: 30px; height: 30px; border-radius: 50%; background: var(--white); border: 2px solid var(--ink-faint);
   display: flex; align-items: center; justify-content: center; font-size: 0.92rem; flex-shrink: 0;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
+.booking-steps__step.is-active .num { transform: scale(1.12); }
 .booking-steps__step.is-active { color: var(--bordeaux-800); border-color: var(--gold-500); }
 .booking-steps__step.is-active .num { background: var(--bordeaux-800); border-color: var(--bordeaux-800); color: var(--white); }
 .booking-steps__step.is-done .num { background: var(--gold-500); border-color: var(--gold-500); color: var(--bordeaux-950); }
@@ -358,6 +411,13 @@ section { padding: 96px 0; }
 .booking-panel { padding: 44px; }
 .booking-panel[hidden] { display: none; }
 @media (max-width: 640px) { .booking-panel { padding: 28px 22px; } }
+@media (prefers-reduced-motion: no-preference) {
+  .booking-panel:not([hidden]) { animation: panelEnter 0.4s cubic-bezier(.22,.61,.36,1) both; }
+}
+@keyframes panelEnter {
+  from { opacity: 0; transform: translateX(14px); }
+  to { opacity: 1; transform: translateX(0); }
+}
 
 .form-row { margin-bottom: 24px; }
 .form-row label { display: block; font-weight: 700; margin-bottom: 8px; color: var(--bordeaux-900); }
@@ -373,7 +433,14 @@ section { padding: 96px 0; }
 .room-select-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 8px; }
 .room-select {
   display: flex; align-items: center; gap: 20px; padding: 20px; border: 2px solid var(--line);
-  border-radius: var(--radius-md); cursor: pointer; transition: border-color 0.15s ease, background 0.15s ease;
+  border-radius: var(--radius-md); cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+}
+.room-select:hover { transform: translateY(-2px); }
+@media (prefers-reduced-motion: no-preference) {
+  .room-select-list .room-select { animation: heroFadeUp 0.5s cubic-bezier(.22,.61,.36,1) both; }
+  .room-select-list .room-select:nth-child(2) { animation-delay: 0.08s; }
+  .room-select-list .room-select:nth-child(3) { animation-delay: 0.16s; }
 }
 .room-select:hover { border-color: var(--gold-500); }
 .room-select.is-selected { border-color: var(--bordeaux-800); background: rgba(140,28,40,0.05); }
@@ -480,4 +547,11 @@ section { padding: 96px 0; }
 @media (prefers-reduced-motion: no-preference) {
   .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+  /* Gestaffeltes Nacheinander-Einblenden für Karten-Reihen */
+  .grid-3 .reveal:nth-child(2), .grid-2 .reveal:nth-child(2) { transition-delay: 0.1s; }
+  .grid-3 .reveal:nth-child(3) { transition-delay: 0.2s; }
+  .supplier-list__item.reveal:nth-child(2) { transition-delay: 0.08s; }
+  .supplier-list__item.reveal:nth-child(3) { transition-delay: 0.16s; }
+  .supplier-list__item.reveal:nth-child(4) { transition-delay: 0.24s; }
 }
