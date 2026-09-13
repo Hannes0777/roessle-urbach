@@ -10,11 +10,11 @@
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="has-hero-overlay">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 <div class="pitch-banner">🐴 <strong>Pitch-Vorschau</strong> für Gasthaus Rössle Urbach: unverbindlicher Entwurf, noch nicht die offizielle Website</div>
 
-<header class="site-header">
+<header class="site-header site-header--overlay">
   <div class="header-utility">
     <div class="container">
       <div class="header-utility__info">
@@ -67,25 +67,21 @@
 
 <main id="main">
 
-  <section class="hero">
-    <div class="container hero__grid">
-      <div>
-        <span class="eyebrow hero__eyebrow">Weinstube · Restaurant · Zimmer</span>
-        <h1>Gastfreundschaft, <em>die im Remstal zuhause ist.</em></h1>
-        <p class="hero__lede">Im Rössle in Urbach treffen regionale Küche, ein Gästezimmer für die Nacht und eine Weinstube mit Geschichte aufeinander – zentral zwischen Schorndorf und Schwäbisch Gmünd.</p>
-        <div class="hero__actions">
-          <a class="btn btn-primary" href="zimmer.html#buchen">Zimmer anfragen</a>
-          <a class="btn btn-outline" href="speisen-getraenke.html">Speisen &amp; Getränke</a>
-        </div>
-        <div class="hero-hours" data-live-status data-status="closed">
+  <section class="hero hero--photo">
+    <div class="container hero__content">
+      <div class="hero__badges">
+        <span class="hero-pill" data-live-status data-status="closed">
           <span class="status-dot" aria-hidden="true"></span>
-          <span class="hero-hours__text" data-status-label>Öffnungsstatus wird geladen …</span>
-        </div>
+          <span data-status-label>Öffnungsstatus wird geladen …</span>
+        </span>
+        <span class="hero-pill">📍 Mühlstraße 15, Urbach</span>
       </div>
-      <div class="hero__crest-panel">
-        <img src="assets/images/logo.webp" alt="Wappen Gasthaus Rössle" width="190" height="153">
-        <div class="divider"></div>
-        <p>„Die Geniesserei“</p>
+      <span class="eyebrow hero__eyebrow">Weinstube · Restaurant · Zimmer</span>
+      <h1>Gastfreundschaft, <em>die im Remstal zuhause ist.</em></h1>
+      <p class="hero__lede">Im Rössle in Urbach treffen regionale Küche, ein Gästezimmer für die Nacht und eine Weinstube mit Geschichte aufeinander – zentral zwischen Schorndorf und Schwäbisch Gmünd.</p>
+      <div class="hero__actions">
+        <a class="btn btn-gold" href="zimmer.html#buchen">Zimmer anfragen</a>
+        <a class="btn btn-outline btn-outline--light" href="speisen-getraenke.html">Speisen &amp; Getränke</a>
       </div>
     </div>
   </section>
