@@ -200,6 +200,19 @@ em { font-style: italic; }
   .header-main .container { grid-template-columns: 1fr auto; }
 }
 
+/* Utility bar tends to wrap onto three separate lines on narrow phones
+   (phone number, status pill, CTA each fighting for the same row) — tighten
+   it up so it settles into two compact lines instead. */
+@media (max-width: 640px) {
+  .header-utility { font-size: 0.8rem; }
+  .header-utility .container { padding: 7px 20px; gap: 6px 12px; }
+  .header-utility__info { gap: 6px 12px; }
+  .header-utility__cta { padding: 6px 14px; font-size: 0.92rem; }
+  .header-main .container { min-height: 84px; }
+  .brand-crest img { height: 58px; }
+  .brand-crest span { display: none; }
+}
+
 /* ---- Transparent "glass" header over a full-bleed photo hero -----------
    Only used on the homepage (body.has-hero-overlay): the header keeps its
    two-bar layout but becomes a translucent, blurred panel that floats over
