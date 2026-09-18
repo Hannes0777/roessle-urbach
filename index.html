@@ -10,11 +10,11 @@
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="has-hero-overlay">
+<body>
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 <div class="pitch-banner">🐴 <strong>Pitch-Vorschau</strong> für Gasthaus Rössle Urbach: unverbindlicher Entwurf, noch nicht die offizielle Website</div>
 
-<header class="site-header site-header--overlay">
+<header class="site-header">
   <div class="header-utility">
     <div class="container">
       <div class="header-utility__info">
@@ -67,50 +67,63 @@
 
 <main id="main">
 
-  <section class="hero hero--photo hero--home">
-    <div class="container hero__content">
-      <div class="hero__badges">
-        <span class="hero-pill" data-live-status data-status="closed">
-          <span class="status-dot" aria-hidden="true"></span>
-          <span data-status-label>Öffnungsstatus wird geladen …</span>
-        </span>
-        <span class="hero-pill">📍 Mühlstraße 15, Urbach</span>
-      </div>
-      <span class="eyebrow hero__eyebrow">Weinstube · Restaurant · Zimmer</span>
-      <h1>Gastfreundschaft, <em>die im Remstal zuhause ist.</em></h1>
-      <p class="hero__lede">Im Rössle in Urbach treffen regionale Küche, ein Gästezimmer für die Nacht und eine Weinstube mit Geschichte aufeinander – zentral zwischen Schorndorf und Schwäbisch Gmünd.</p>
-      <div class="hero__actions">
-        <a class="btn btn-gold" href="zimmer.html#buchen">Zimmer anfragen</a>
-        <a class="btn btn-outline btn-outline--light" href="speisen-getraenke.html">Speisen &amp; Getränke</a>
-      </div>
-    </div>
-
-    <div class="container hero__discover">
-      <div class="section-head text-center reveal">
-        <span class="eyebrow eyebrow--light">Entdecken Sie das Rössle</span>
-        <h2>Drei Wege, uns kennenzulernen</h2>
-      </div>
-      <div class="grid-3">
-        <div class="card reveal" style="background:rgba(244,230,196,0.08); border-color:rgba(244,230,196,0.22); color:var(--gold-100);">
-          <h3 style="color:var(--white);">Speisekarte &amp; Weine</h3>
-          <p style="color:var(--gold-100);">Regionale Küche und eine Weinstube mit Charakter.</p>
-          <div style="margin-top:20px;"><a class="btn btn-outline btn-outline--light" href="speisen-getraenke.html">Ansehen</a></div>
+  <section class="hero hero--home">
+    <div class="container hero-frame">
+      <div class="hero-frame-inner">
+        <div class="hero__content">
+          <div class="hero__badges">
+            <span class="hero-pill" data-live-status data-status="closed">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span data-status-label>Öffnungsstatus wird geladen …</span>
+            </span>
+            <span class="hero-pill">📍 Mühlstraße 15, Urbach</span>
+          </div>
+          <span class="eyebrow hero__eyebrow">Weinstube · Restaurant · Zimmer</span>
+          <h1>Gastfreundschaft, <em>die im Remstal zuhause ist.</em></h1>
+          <p class="hero__lede">Im Rössle in Urbach treffen regionale Küche, ein Gästezimmer für die Nacht und eine Weinstube mit Geschichte aufeinander – zentral zwischen Schorndorf und Schwäbisch Gmünd.</p>
+          <div class="hero__actions">
+            <a class="btn btn-gold" href="zimmer.html#buchen">Zimmer anfragen</a>
+            <a class="btn btn-outline btn-outline--light" href="speisen-getraenke.html">Speisen &amp; Getränke</a>
+          </div>
         </div>
-        <div class="card reveal" style="background:rgba(244,230,196,0.08); border-color:rgba(244,230,196,0.22); color:var(--gold-100);">
-          <h3 style="color:var(--white);">Zimmer &amp; Buchung</h3>
-          <p style="color:var(--gold-100);">Drei Zimmerkategorien, unverbindlich anfragbar.</p>
-          <div style="margin-top:20px;"><a class="btn btn-outline btn-outline--light" href="zimmer.html">Zimmer ansehen</a></div>
-        </div>
-        <div class="card reveal" style="background:rgba(244,230,196,0.08); border-color:rgba(244,230,196,0.22); color:var(--gold-100);">
-          <h3 style="color:var(--white);">Virtueller Rundgang</h3>
-          <p style="color:var(--gold-100);">Ein erster Blick ins Haus, direkt von der Straße aus.</p>
-          <div style="margin-top:20px;"><a class="btn btn-outline btn-outline--light" href="rundgang.html">Rundgang starten</a></div>
-        </div>
+        <figure class="hero__photo">
+          <img src="assets/images/rossle-fassade.webp" alt="Fassade des Gasthaus Rössle in Urbach mit schmiedeeisernem Pferde-Ausleger und rotem Gästezimmer-Schild" width="1000" height="1349" loading="eager">
+          <figcaption>Unser Haus in der Mühlstraße</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
   <section class="section--tint">
+    <div class="container">
+      <div class="section-head text-center reveal">
+        <span class="eyebrow">Entdecken Sie das Rössle</span>
+        <h2>Drei Wege, uns kennenzulernen</h2>
+      </div>
+      <div class="signs">
+        <div class="sign reveal">
+          <span class="numeral">I</span>
+          <h3>Speisekarte &amp; Weine</h3>
+          <p>Regionale Küche und eine Weinstube mit Charakter.</p>
+          <a href="speisen-getraenke.html">Ansehen →</a>
+        </div>
+        <div class="sign reveal">
+          <span class="numeral">II</span>
+          <h3>Zimmer &amp; Buchung</h3>
+          <p>Drei Zimmerkategorien, unverbindlich anfragbar.</p>
+          <a href="zimmer.html">Zimmer ansehen →</a>
+        </div>
+        <div class="sign reveal">
+          <span class="numeral">III</span>
+          <h3>Virtueller Rundgang</h3>
+          <p>Ein erster Blick ins Haus, direkt von der Straße aus.</p>
+          <a href="rundgang.html">Rundgang starten →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
     <div class="container">
       <div class="section-head text-center reveal">
         <span class="eyebrow">Öffnungszeiten</span>
@@ -138,15 +151,22 @@
   </section>
 
   <section>
-    <div class="container split">
+    <div class="container story">
       <div class="reveal">
         <span class="eyebrow">Unsere Philosophie</span>
         <h2>Regional, ehrlich, ohne Umwege</h2>
-        <p style="font-size:1.1rem; color:var(--ink-soft); margin-bottom:20px;">Wir beziehen Spargel, Obst und Gemüse vom Schmidener Feld, Fleisch von der Erzeugergemeinschaft Schwäbisch Hall und von Metzger Haag, Wild von einem Jäger aus Alfdorf und Brot von der Bäckerei Schulze in Urbach – kurze Wege statt austauschbarer Standardware.</p>
-        <a class="btn btn-outline" href="speisen-getraenke.html">Mehr zu unseren Lieferanten</a>
+        <p class="story-lede" style="font-size:1.1rem; color:var(--ink-soft);">Wer bei uns isst, isst mit kurzen Wegen: Spargel, Obst und Gemüse kommen vom Schmidener Feld, Fleisch von der Erzeugergemeinschaft Schwäbisch Hall und von Metzger Haag, Wild von einem Jäger aus Alfdorf, Brot von der Bäckerei Schulze hier in Urbach. Keine austauschbare Standardware – sondern Zutaten, deren Herkunft wir Ihnen auf Nachfrage auch am Tisch erzählen können.</p>
+        <a class="btn btn-outline" href="speisen-getraenke.html" style="margin-top:20px; display:inline-flex;">Mehr zu unseren Lieferanten</a>
       </div>
-      <div class="card reveal" style="padding:0; overflow:hidden;">
-        <img src="assets/images/rossle-fassade.webp" alt="Fassade des Gasthaus Rössle in Urbach mit schmiedeeisernem Pferde-Ausleger und rotem Gästezimmer-Schild" width="1000" height="1349" loading="lazy" style="display:block; width:100%; height:100%; object-fit:cover;">
+      <div class="margin-note reveal">
+        <h4>Woher unsere Zutaten kommen</h4>
+        <ul>
+          <li>Spargel &amp; Gemüse — Schmidener Feld</li>
+          <li>Fleisch — Erzeugergem. Schwäbisch Hall</li>
+          <li>Fleisch — Metzger Haag</li>
+          <li>Wild — Jäger, Alfdorf</li>
+          <li>Brot — Bäckerei Schulze, Urbach</li>
+        </ul>
       </div>
     </div>
   </section>
