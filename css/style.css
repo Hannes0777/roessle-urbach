@@ -39,8 +39,8 @@
   --radius-md: 14px;
   --radius-lg: 26px;
 
-  --header-h-utility: 56px;
-  --header-h-main: 104px;
+  --header-h-utility: 44px;
+  --header-h-main: 84px;
 }
 
 /* ---- Reset ------------------------------------------------------------- */
@@ -96,9 +96,9 @@ em { font-style: italic; }
   background: var(--bordeaux-950);
   color: var(--gold-100);
   text-align: center;
-  font-size: 0.92rem;
-  padding: 10px 20px;
-  line-height: 1.5;
+  font-size: 0.86rem;
+  padding: 6px 20px;
+  line-height: 1.4;
 }
 .pitch-banner strong { color: var(--gold-400); }
 
@@ -231,7 +231,7 @@ em { font-style: italic; }
    Transparenz-Trick mehr nötig); das echte Fassadenfoto hängt nur auf der
    Startseite asymmetrisch neben dem Text, wie ein aufgehängtes Bild.
    ========================================================================== */
-.hero { background: var(--bordeaux-950); padding: 56px 0; }
+.hero { background: var(--bordeaux-950); padding: 48px 0; }
 .hero-frame {
   border: 2px solid var(--gold-500); border-radius: var(--radius-md);
   padding: 48px;
@@ -240,16 +240,24 @@ em { font-style: italic; }
   border: 1px solid rgba(207,159,63,0.5); border-radius: calc(var(--radius-md) - 6px);
   padding: 48px;
 }
+/* Startseiten-Hero deutlich knapper als die Unterseiten-Variante, damit die
+   komplette Hero-Section ohne Scrollen ins erste Sichtfeld passt (Foto-Spalte
+   treibt sonst die Höhe unnötig in die Höhe). */
+.hero--home { padding: 14px 0; }
+.hero--home .hero-frame { padding: 20px; }
 .hero--home .hero-frame-inner {
-  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center;
+  padding: 20px;
+  display: grid; grid-template-columns: 1.35fr 0.65fr; gap: 28px; align-items: center;
 }
 .hero__content { min-width: 0; }
-.hero h1 { overflow-wrap: break-word; }
+.hero h1 { overflow-wrap: break-word; -webkit-hyphens: auto; -ms-hyphens: auto; hyphens: auto; }
+.hero--home h1 { font-size: clamp(2.2rem, 3.4vw, 3.2rem); margin-bottom: 14px; }
+.hero--home .hero__lede { margin-bottom: 16px; }
 @media (max-width: 860px) {
   .hero--home .hero-frame-inner { grid-template-columns: 1fr; }
 }
 
-.hero__badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+.hero__badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
 .hero-pill {
   display: inline-flex; align-items: center; gap: 8px;
   background: rgba(244, 230, 196, 0.1); border: 1px solid rgba(244, 230, 196, 0.3);
@@ -263,7 +271,7 @@ em { font-style: italic; }
 .hero__eyebrow { color: var(--gold-400); }
 .hero h1 { color: var(--white); margin-bottom: 22px; }
 .hero h1 em { color: var(--gold-400); font-style: italic; }
-.hero__lede { font-size: 1.15rem; color: rgba(244, 230, 196, 0.85); margin-bottom: 32px; max-width: 52ch; }
+.hero__lede { font-size: 1.15rem; color: rgba(244, 230, 196, 0.85); margin-bottom: 22px; max-width: 52ch; }
 .hero__actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
 /* Inhalt fährt beim Laden sanft nacheinander hoch — reine CSS-Keyframes,
@@ -282,7 +290,7 @@ em { font-style: italic; }
 }
 
 /* ---- Fassadenfoto, wie ein aufgehängtes Bild — nur Startseite ----------- */
-.hero__photo { background: var(--vellum); padding: 8px; transform: rotate(1deg); box-shadow: var(--shadow-lg); }
+.hero__photo { background: var(--vellum); padding: 8px; transform: rotate(1deg); box-shadow: var(--shadow-lg); max-width: 340px; margin-left: auto; }
 .hero__photo img { width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; border-radius: 2px; }
 .hero__photo figcaption {
   font-family: var(--font-display); font-style: italic; text-align: center;
